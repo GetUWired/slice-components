@@ -1,0 +1,233 @@
+<style>
+    @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+    .audio-player {
+        --background-color: #222;
+        --slider-color: rgba(255, 255, 255, 0.1);
+        --slider-border-color: rgba(0, 0, 0, 0.1);
+        --thumb-color: #fff;
+        --thumb-border-color: rgba(0, 0, 0, 0.2);
+        --button-color: #fff;
+        --time-color: #fff;
+        background-color: var(--background-color);
+        display: grid;
+        grid-template-columns: 2rem auto 6rem;
+        grid-gap: 1rem;
+        align-items: center;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .audio-player__play {
+        text-align: right;
+        cursor: pointer;
+        color: var(--button-color);
+    }
+
+    .audio-player__time {
+        display: inline-grid;
+        grid-template-columns: 5rem auto 5rem;
+        grid-gap: 0.5rem;
+        align-items: center;
+    }
+
+    .audio-player__time-current {
+        text-align: right;
+        color: var(--time-color);
+    }
+
+    .audio-player__time-total {
+        color: var(--time-color);
+    }
+
+    .audio-player__time-slider, .audio-player__volume-slider{
+        height: 0.35rem;
+        background-color: var(--slider-color);
+        border-radius: 0.2rem;
+        width: 100%;
+        -webkit-appearance: none;
+        outline: none;
+    }
+
+    .audio-player__volume {
+        display: grid;
+        grid-template-columns: 2rem auto;
+        align-items: center;
+    }
+
+    .audio-player__volume-icon {
+        cursor: pointer;
+        color: var(--button-color);
+    }
+
+    /* Special styling for WebKit/Blink */
+    .audio-player input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        border: 1px solid var(--thumb-border-color);
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: var(--thumb-color);
+        cursor: pointer;
+        margin-top: -3px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(13,13, 13, 0.5);
+    }
+
+    /* All the same stuff for Firefox */
+    .audio-player input[type=range]::-moz-range-thumb {
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(13,13, 13, 0.5);
+        border: 1px solid var(--thumb-border-color);
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: var(--thumb-color);
+        cursor: pointer;
+    }
+
+    /* All the same stuff for IE */
+    .audio-player input[type=range]::-ms-thumb {
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(13,13, 13, 0.5);
+        border: 1px solid var(--thumb-border-color);
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: var(--thumb-color);
+        cursor: pointer;
+    }
+
+    .audio-player input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(13,13, 13, 0.5);
+        background: var(--slider-color);
+        border-radius: 1.3px;
+        border: 0.2px solid var(--slider-border-color);
+    }
+
+    .audio-player input[type=range]:focus::-webkit-slider-runnable-track {
+        background: var(--slider-color);
+    }
+
+    .audio-player input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(13,13, 13, 0.5);
+        background: var(--slider-color);
+        border-radius: 1.3px;
+        border: 0.2px solid var(--slider-border-color);
+    }
+
+    .audio-player input[type=range]::-ms-track {
+        width: 100%;
+        height: 8.4px;
+        cursor: pointer;
+        background: transparent;
+        border-color: transparent;
+        border-width: 16px 0;
+        color: transparent;
+    }
+    .audio-player input[type=range]::-ms-fill-lower {
+        background: #eee;
+        border: 0.2px solid var(--slider-border-color);
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(13,13, 13, 0.5);
+    }
+    .audio-player input[type=range]:focus::-ms-fill-lower {
+        background: #eee;
+    }
+    .audio-player input[type=range]::-ms-fill-upper {
+        background: var(--slider-color);
+        border: 0.2px solid var(--slider-border-color);
+        border-radius: 2.6px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3), 0px 0px 1px rgba(13,13, 13, 0.5);
+    }
+    .audio-player input[type=range]:focus::-ms-fill-upper {
+        background: var(--slider-color);
+    }
+
+</style>
+<div class="audio-player">
+    <audio class="audio-player__audio-file">
+        <source src="http://reforum2020.ca.smartenergydecisions.com/audio/BTM007.mp3" type="audio/mp3">
+    </audio>
+    <i class="material-icons audio-player__play play-audio">play_arrow</i>
+    <div class="audio-player__time">
+        <div class="audio-player__time-current">00:00</div>
+        <input type="range" class="audio-player__time-slider" min="0" max="100" value="0">
+        <div class="audio-player__time-total">00:00</div>
+    </div>
+    <div class="audio-player__volume">
+        <i class="material-icons audio-player__volume-icon">volume_up</i>
+        <input type="range" class="audio-player__volume-slider" min="0.0" max="1.0" value="10" step="0.1">
+    </div>
+</div>
+</div>
+<script>
+    class GUWAudioPlayer {
+        constructor(parentElement) {
+            this.audioFile = parentElement.querySelector(".audio-player__audio-file");
+            this.curTime = parentElement.querySelector(".audio-player__time-current");
+            this.totalTime = parentElement.querySelector(".audio-player__time-total");
+            this.audioPlay = parentElement.querySelector(".audio-player__play");
+            this.timer = false;
+            this.timeSlider = parentElement.querySelector(".audio-player__time-slider");
+            this.volumeIcon = parentElement.querySelector(".audio-player__volume-icon");
+            this.volumeSlider = parentElement.querySelector(".audio-player__volume-slider");
+            this.updateTime = this.updateTime.bind(this);
+            parentElement.querySelectorAll('.play-audio').forEach(playButton => {
+                playButton.addEventListener('click', () => {
+                    if (this.audioFile.paused) {
+                        this.audioFile.play();
+                        this.timer = setInterval(this.updateTime, 500);
+                        this.audioPlay.innerHTML = "pause";
+                    } else {
+                        this.audioFile.pause();
+                        this.audioPlay.innerHTML = "play_arrow";
+                        clearInterval(this.timer);
+                    }
+                });
+            });
+
+            this.volumeIcon.addEventListener("click", (e) => {
+                if(this.audioFile.muted){
+                    this.audioFile.muted = false;
+                    this.volumeIcon.innerHTML = "volume_up";
+                } else {
+                    this.audioFile.muted = true;
+                    this.volumeIcon.innerHTML = "volume_off";
+                }
+            });
+
+            this.timeSlider.addEventListener("change", (e) => {
+                this.audioFile.currentTime = this.timeSlider.value;
+            });
+
+            this.volumeSlider.addEventListener("change", (e) => {
+                this.audioFile.volume = this.volumeSlider.value;
+            });
+
+        } // end constructor
+
+        updateTime () {
+            let curMinutes = parseInt(this.audioFile.currentTime/60);
+            let curSeconds = parseInt(this.audioFile.currentTime%60);
+            let durMinutes = parseInt(this.audioFile.duration/60);
+            let durSeconds = parseInt(this.audioFile.duration%60);
+            this.totalTime.innerHTML = this.pad(durMinutes, 2)+":"+this.pad(durSeconds, 2);
+            this.timeSlider.max = this.audioFile.duration;
+            this.timeSlider.value = this.audioFile.currentTime;
+            this.curTime.innerHTML = this.pad(curMinutes, 2)+":"+ this.pad(curSeconds, 2);
+        }
+
+        pad(num, size) {
+            var s = num+"";
+            while (s.length < size) s = "0" + s;
+            return s;
+        }
+    }
+
+    players = [];
+    document.querySelectorAll(".audio-player").forEach(player => {
+        players.push(new GUWAudioPlayer(player));
+    });
+</script>
