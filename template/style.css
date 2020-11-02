@@ -1,0 +1,8 @@
+#id_of_main_section{
+    margin:5rem 0 5rem 0;
+}
+
+#id_of_main_section .classes{
+    background-image: url(../images/ps_triangle_dots.png);
+    background-image: url(https://preventiondev.wpengine.com/wp-content/themes/prevention_strategies/assets/images/ps_triangle_dots.png);
+}
