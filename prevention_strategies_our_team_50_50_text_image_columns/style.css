@@ -1,0 +1,46 @@
+#our_team_wrapper{
+
+}
+
+#our_team_wrapper .blue_section{
+background:var(--color_blue_pale);
+}
+
+#our_team_wrapper .section_wrapper{
+display: grid;
+grid-template-columns: 50% 50%;
+padding:6.5rem 0;
+}
+
+#our_team_wrapper h2{
+margin: 0 0 1.85rem 0;
+}
+
+#our_team_wrapper button{
+    margin:2.25rem auto 0;
+}
+
+#our_team_wrapper img{
+    width:100%;
+    height:auto;
+}
+
+#our_team_wrapper h3{
+font-size:1.375rem;
+text-transform: uppercase;
+margin: 0 0 3.75rem 0;
+}
+
+#our_team_wrapper p{
+font-family: var(--font_crim);
+color: var(--color_grey_medium);
+font-size: 1.25rem;
+line-height: 2.188rem;
+margin:0 0 3rem 0;
+}
+
+@media all and (max-width: 800px) { 
+    #our_team_wrapper .section_wrapper{
+        grid-template-columns: 100%;
+    }
+}
