@@ -1,8 +1,7 @@
 # slice-components
-A place to store useful, reusable design pieces.
+A place to store useful, reusable design pieces and practice using git.
 
 ## Rules
-1. Create a branch with your changes
-2. No merging into until the monthly dev meeting
-3. We'll come up with more guidelines and suggestions about naming conventions 
-4. Use a parent element as a wrapper with an id that is the name of the component and use that in all the sytles
+1. Create a branch for the component you're working on
+2. We'll take time during the monthly developer meeting to review new components and merge then to main 
+3. Try and use a parent element as a wrapper with a fairly unique class name
