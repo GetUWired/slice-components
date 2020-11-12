@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    .responsive-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+        width: 95%;
+        margin: 20px auto;
+    }
+    .responsive-grid .grid-element {
+        min-width: 200px; /*same as min width in grid columns*/
+        background-color: #999;
+        text-align: center;
+    }
+</style>
+<section class="responsive-grid">
+    <div class="grid-element"><h2>Element 1</h2></div>
+    <div class="grid-element"><h2>Element 2</h2></div>
+    <div class="grid-element"><h2>Element 3</h2></div>
+    <div class="grid-element"><h2>Element 4</h2></div>
+    <div class="grid-element"><h2>Element 5</h2></div>
+    <div class="grid-element"><h2>Element 6</h2></div>
+    <div class="grid-element"><h2>Element 7</h2></div>
+    <div class="grid-element"><h2>Element 8</h2></div>
+    <div class="grid-element"><h2>Element 9</h2></div>
+    <div class="grid-element"><h2>Element 10</h2></div>
+</section>
+</body>
+</html>
