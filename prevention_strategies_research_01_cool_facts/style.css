@@ -1,0 +1,45 @@
+#cool_facts{
+    margin:5rem 0 5rem 0;
+    width:100%;
+}
+
+#cool_facts .people_image:after {
+    background-image: url(../images/ps_triangle_dots.png);
+    background-image: url(https://preventiondev.wpengine.com/wp-content/themes/prevention_strategies/assets/images/ps_triangle_dots.png);
+}
+
+#cool_facts ul{
+    display:grid;
+    grid-template-columns: 30% 30% 30%;
+    border-top: 0.15rem solid var(--color_blue);
+    border-bottom: 0.15rem solid var(--color_blue);
+    margin:1rem 0;
+    padding:2.5rem 0;
+    justify-content: space-around;
+}
+
+#cool_facts ul li{
+    text-align: center;
+    font-family: var(--font_crim);
+    color: var(--color_blue);
+}
+
+@media all and (max-width: 800px) { 
+    #cool_facts ul li{
+        font-size:1.5rem;
+    }
+}
+
+@media all and (max-width: 650px) { 
+    #cool_facts ul{
+        grid-template-columns: 100%;
+    }
+
+    #cool_facts ul li{
+        padding:1rem 0;
+    }
+}
+
+@media all and (max-width: 480px) { 
+
+}
