@@ -1,79 +1,132 @@
 #services_section{
-    margin:5rem 0 5rem 0;
-    }
-    
-    #services_section .container_max_width_wider{
-    max-width:104rem;
-    }
-    
-    #services_section .people_image:after {
-    background-image: url(../images/ps_triangle_dots.png);
-    background-image: url(https://preventiondev.wpengine.com/wp-content/themes/prevention_strategies/assets/images/ps_triangle_dots.png);
-    top: -1.1rem;
-    left: -1.1rem;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    content: " ";
-    display: block;
-    height: 5rem;
-    width: 5rem;
-    position: relative;
-    }
+margin:5rem 0 5rem 0;
+width:100%;
+}
+
+#services_section .container_max_width_wider{
+max-width:104rem;
+}
+
+#services_section .people_image:after {
+background-image: url(../images/ps_triangle_dots.png);
+background-image: url(https://preventiondev.wpengine.com/wp-content/themes/prevention_strategies/assets/images/ps_triangle_dots.png);
+top: -1.1rem;
+left: -1.1rem;
+background-size: contain;
+background-repeat: no-repeat;
+background-position: 0 0;
+content: " ";
+display: block;
+height: 5rem;
+width: 5rem;
+position: relative;
+}
+
+#services_section #image_text_overlap{
+display:grid;
+grid-template-columns: 40% 60%;
+/*border:1px solid #000;*/
+}
+
+#services_section .people_image{
+background-size: contain;
+background-repeat: no-repeat;
+display:inline-block;
+height:49rem;
+background-image: url(../images/ps_evalution_yellow_line_small.png);
+background-image: url(https://preventiondev.wpengine.com/wp-content/themes/prevention_strategies/assets/images/ps_evaluation_people_around_computer.jpg);
+/*
+width:60%;
+width:47rem;
+*/
+width:100%;
+z-index: 9999;
+position: relative;
+left: 7rem;
+top: 4.25rem;
+}
+
+#services_section .blue_box{
+/*width:57%;*/
+width:53rem;
+background-color:var(--color_blue_pale);
+/*max-height: 1080px;
+overflow: scroll;*/
+padding: 3.6rem 0;
+}
+
+#services_section .blue_box div{
+width:72%;
+margin: 0 6.8rem 0 9.3rem;
+}
+
+#services_section .blue_box div h3{   
+color:var(--color_blue);
+font-size: 1.3rem;
+font-weight: 600;
+margin: 2rem 0 1.5rem 0;
+}
+
+#services_section .blue_box div p{   
+max-height: 4.3rem;
+overflow: hidden;
+margin: 0 0 1.5rem 0;
+}
+
+#services_section .blue_box div a{   
+text-decoration:underline;
+color:var(--color_light_blue);
+}
+
+@media all and (max-width: 800px) { 
     
     #services_section #image_text_overlap{
-    display:grid;
-    grid-template-columns: 40% 60%;
-    /*border:1px solid #000;*/
+        grid-template-columns: 100%;
     }
-    
-    #services_section .people_image{
-    background-size: contain;
-    background-repeat: no-repeat;
-    display:inline-block;
-    height:49rem;
-    background-image: url(../images/ps_evalution_yellow_line_small.png);
-    background-image: url(https://preventiondev.wpengine.com/wp-content/themes/prevention_strategies/assets/images/ps_evaluation_people_around_computer.jpg);
-    /*
-    width:60%;
-    width:47rem;
-    */
-    width:100%;
-    z-index: 9999;
-    position: relative;
-    left: 7rem;
-    top: 4.25rem;
+
+    #services_section .people_image:after{
+        display:none;
     }
+
+    .container_max_width_wider{
+        width:100%;
+    }
+
+    #services_section .people_image {
+        background-size: cover;
+        top:0;
+        left:0;
+        background-position: 50% 50%;
+        height:30rem;
+    }
+
+    #services_section .blue_box{
+        width:100%;
+    }
+
+    #services_section .blue_box div{
+        margin:0 auto;
+    }
+
+    #services_section .blue_box div p{
+        max-height: 5.3rem;
+    }
+
+}
+
+
+@media all and (max-width: 480px) { 
     
     #services_section .blue_box{
-    /*width:57%;*/
-    width:53rem;
-    background-color:var(--color_blue_pale);
-    /*max-height: 1080px;
-    overflow: scroll;*/
-    padding: 3.6rem 0;
+        padding: 1rem 0 4rem;
     }
-    
+
     #services_section .blue_box div{
-    width:72%;
-    margin: 0 6.8rem 0 9.3rem;
+        width:90%;
     }
-    
-    #services_section .blue_box div h3{   
-    color:var(--color_blue);
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 2rem 0 1.5rem 0;
+
+    #services_section .blue_box div p{
+        max-height: 14rem;
     }
-    
-    #services_section .blue_box div p{   
-    max-height: 4.3rem;
-    overflow: hidden;
-    margin: 0 0 1.5rem 0;
-    }
-    
-    #services_section .blue_box div a{   
-    text-decoration:underline;
-    color:var(--color_light_blue);
-    }
-    
+
+}
